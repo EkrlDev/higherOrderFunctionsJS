@@ -168,6 +168,15 @@ console.log(ageTotals);
 const yearTotal = companies.reduce((total , company) => total + (company.end - company.start), 0 );
 console.log(yearTotal);
 
+const findComp = companies.find(company => company.category === 'Finance');// Returns only one thing and the first element with the category of 'Finance' when found. In this ex it returns only first object.
+console.log(findComp.name);
+
+const someComp = companies.some(company => company.end > 2004);//Returns true or false. If condition is ensured by even one of the element in array, it returns true. In this ex if one of the companies ended after 2004 it returns true.
+console.log(someComp);
+
+const everyComp = companies.every(company => company.start > 1980);//Returns true or false. If condition is ensured by all of the elements it returns true. In this ex if all of the companies started after 1980 it returns true.
+console.log(everyComp);
+
 const combined = ages
     .map(age => age * 2)
     .filter(age => age >= 40)
